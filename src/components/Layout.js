@@ -1,34 +1,61 @@
 import React from "react"
+import PropTypes from "prop-types"
+
+import { DarkThemeToggle, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react"
 
 const pages = [
 	{
 		url: "/",
-		title: "Home"
+		name: "Home"
 	},
 	{
 		url: "/panel",
-		title: "Panel"
+		name: "Panel"
 	},
 	{
 		url: "/profile",
-		title: "Profile"
+		name: "Profile"
 	}
 ]
 
-const Layout = ({ child }) => {
+const Layout = ({ children }) => {
 	return (
-		<div>
+		<div className="">
 			<header>
+				<Navbar>
+					<NavbarBrand href='/'>
+						Page
+					</NavbarBrand>
+
+					<div className>
+						<DarkThemeToggle/>
+						<NavbarToggle/>
+					</div>
+
+					<NavbarCollapse>
+						{ pages.map(({ url, name }) => {
+							return (
+								<NavbarLink key={ url } href={ url }>
+									{ name }
+								</NavbarLink>
+							)
+						}) }
+					</NavbarCollapse>
+				</Navbar>
 			</header>
 
 			<main>
-				{ child }
+				{ children }
 			</main>
 
 			<footer>
 			</footer>
 		</div>
 	)
+}
+
+Layout.propTypes = {
+	children: PropTypes.node.isRequired
 }
 
 export default Layout
