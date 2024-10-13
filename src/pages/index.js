@@ -1,13 +1,11 @@
-import * as React from "react"
+import React from "react"
 
-const IndexPage = () => {
+const Home = () => {
 	return (
-		<main>
-			Hello World!
-		</main>
+		<div className="">Hello</div>
 	)
 }
 
-export default IndexPage
+export default Home
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <title>Home</title>

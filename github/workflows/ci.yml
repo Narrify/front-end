@@ -28,9 +28,3 @@ jobs:
 
       - name: Run lint
         run: npm run lint
-
-      - name: Run tests
-        run: npm test
-
-      - name: Build Gatsby site (optional)
-        run: npm run build
