@@ -1,61 +1,53 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { DarkThemeToggle, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react"
+import { Flowbite, Navbar } from "flowbite-react"
 
-const pages = [
-	{
-		url: "/",
-		name: "Home"
+const customTheme = {
+	navbar: {
+		brand: {
+			base: "text-xl font-bold text-blue-700 hover:text-blue-300",
+		},
+		link: {
+			base: "text-lg text-gray-500 hover:text-gray-800",
+			active: {
+				on: "text-gray-800 font-semibold underline",
+				off: "text-gray-500 hover:text-gray-800",
+			},
+		},
 	},
-	{
-		url: "/panel",
-		name: "Panel"
-	},
-	{
-		url: "/profile",
-		name: "Profile"
-	}
-]
+}
 
 const Layout = ({ children }) => {
 	return (
-		<div className="">
-			<header>
-				<Navbar>
-					<NavbarBrand href='/'>
-						Page
-					</NavbarBrand>
+		<Flowbite theme={ { theme: customTheme } }>
+			<div>
+				<header className="flex">
+					<Navbar fluid rounded>
+						<Navbar.Brand href="/">Narrify</Navbar.Brand>
+						<Navbar.Toggle/>
+						<Navbar.Collapse>
+							<Navbar.Link href="/" active={ true }>
+								Home
+							</Navbar.Link>
+							<Navbar.Link href="/panel">Panel</Navbar.Link>
+							<Navbar.Link href="/login">Profile</Navbar.Link>
+						</Navbar.Collapse>
+					</Navbar>
+				</header>
 
-					<div className>
-						<DarkThemeToggle/>
-						<NavbarToggle/>
-					</div>
+				<main className="flex">
+					{ children }
+				</main>
 
-					<NavbarCollapse>
-						{ pages.map(({ url, name }) => {
-							return (
-								<NavbarLink key={ url } href={ url }>
-									{ name }
-								</NavbarLink>
-							)
-						}) }
-					</NavbarCollapse>
-				</Navbar>
-			</header>
-
-			<main>
-				{ children }
-			</main>
-
-			<footer>
-			</footer>
-		</div>
+				<footer className="flex">footer</footer>
+			</div>
+		</Flowbite>
 	)
 }
 
 Layout.propTypes = {
-	children: PropTypes.node.isRequired
+	children: PropTypes.node,
 }
 
 export default Layout
