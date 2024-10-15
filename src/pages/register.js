@@ -1,11 +1,11 @@
 import React from "react"
-import LoginForm2 from "../components/LoginForm2"
+import Layout from "../components/LoginForm";
 
 const Register = () => {
 	return (
-		<div>
-			<LoginForm2/>
-		</div>
+		<Layout>
+			Hello World
+		</Layout>
 	)
 }
 

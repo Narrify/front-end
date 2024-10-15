@@ -1,8 +1,9 @@
 import React from "react"
+import LoadingPage from "../components/Loading2";
 
 const Panel = () => {
 	return (
-		<div></div>
+		<LoadingPage/>
 	)
 }
 
