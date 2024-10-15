@@ -1,9 +1,11 @@
 import React from "react"
-import LoadingPage from "../components/Loading2";
+import Layout from "../components/Layout";
 
 const Panel = () => {
 	return (
-		<LoadingPage/>
+		<Layout>
+			PANEL
+		</Layout>
 	)
 }
 
