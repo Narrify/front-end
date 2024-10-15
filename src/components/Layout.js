@@ -51,7 +51,7 @@ const customTheme = {
 
 const pages = [
 	{ name: "Home", url: "/" },
-	{ name: "Panel", url: "/login" },
+	{ name: "Panel", url: "/panel" },
 	{ name: "Profile", url: "/profile" },
 	{ name: " ", url: "/" },
 	{ name: "Login", url: "/login" },
