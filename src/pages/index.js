@@ -1,13 +1,13 @@
-import * as React from "react"
+import React from 'react';
 
-const IndexPage = () => {
-    return (
-        <main>
-            Hello World!
-        </main>
-    )
-}
+import Layout from "../components/Layout";
 
-export default IndexPage
+const Index = () => {
+	return (
+		<Layout>
+			INDEX
+		</Layout>
+	);
+};
 
-export const Head = () => <title>Home Page</title>
+export default Index;
