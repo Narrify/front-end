@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import { Flowbite, Footer, Navbar } from "flowbite-react"
-import { BsDiscord, BsGithub, BsTwitterX } from "react-icons/bs";
+import { BsDiscord, BsGithub, BsTwitterX } from "react-icons/bs"
 
 const customTheme = {
 	navbar: {
@@ -79,8 +79,8 @@ const FooterComponent = () => {
 				)) }
 			</Footer.LinkGroup>
 		</Footer>
-	);
-};
+	)
+}
 
 const Layout = ({ children }) => {
 	return (

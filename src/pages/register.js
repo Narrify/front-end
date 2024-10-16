@@ -1,17 +1,16 @@
-import React, { useState } from 'react'
-import { navigate } from 'gatsby'
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import React, { useState } from "react"
+import { navigate } from "gatsby"
+import { FaEye, FaEyeSlash } from "react-icons/fa"
 
 const Register = () => {
-	const [email, setEmail] = useState('')
-	const [password, setPassword] = useState('')
+	const [email, setEmail] = useState("")
+	const [password, setPassword] = useState("")
 	const [showPassword, setShowPassword] = useState(false)
-	const [rememberMe, setRememberMe] = useState(false)
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		console.log('Register attempted with:', { email, password, rememberMe })
-		navigate('/')
+		console.log("Register attempted with:", { email, password, rememberMe })
+		navigate("/")
 	}
 
 	return (
