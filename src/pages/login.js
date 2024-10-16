@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import { navigate } from 'gatsby'
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import React, { useState } from "react"
+import { navigate } from "gatsby"
+import { FaEye, FaEyeSlash } from "react-icons/fa"
 
 const Login = () => {
-	const [email, setEmail] = useState('')
-	const [password, setPassword] = useState('')
+	const [email, setEmail] = useState("")
+	const [password, setPassword] = useState("")
 	const [showPassword, setShowPassword] = useState(false)
 	const [rememberMe, setRememberMe] = useState(false)
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		console.log('Login attempted with:', { email, password, rememberMe })
-		navigate('/')
+		console.log("Login attempted with:", { email, password, rememberMe })
+		navigate("/")
 	}
 
 	return (
@@ -67,8 +67,8 @@ const Login = () => {
 									checked={ rememberMe }
 									onChange={ () => setRememberMe(!rememberMe) }
 								/>
-								<div className={ `block w-10 h-6 rounded-full ${ rememberMe ? 'bg-blue-600' : 'bg-gray-600' }` }></div>
-								<div className={ `dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition ${ rememberMe ? 'transform translate-x-4' : '' }` }></div>
+								<div className={ `block w-10 h-6 rounded-full ${ rememberMe ? "bg-blue-600" : "bg-gray-600" }` }></div>
+								<div className={ `dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition ${ rememberMe ? "transform translate-x-4" : "" }` }></div>
 							</div>
 						</label>
 					</div>
