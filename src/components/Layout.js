@@ -56,6 +56,7 @@ const pages = [
 	{ name: " ", url: "/" },
 	{ name: "Login", url: "/login" },
 	{ name: "Register", url: "/register" },
+	{ name: "story", url: "/story" }
 ]
 
 //TODO: Split other components into individual components
