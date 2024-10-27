@@ -1,8 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import { Flowbite, Footer, Navbar } from "flowbite-react"
-import { BsDiscord, BsGithub, BsTwitterX } from "react-icons/bs"
+import { Link } from "gatsby";
+
+import { Flowbite, Footer, Navbar } from "flowbite-react";
+import { BsDiscord, BsGithub, BsTwitterX } from "react-icons/bs";
 
 const customTheme = {
 	navbar: {
@@ -56,6 +58,7 @@ const pages = [
 	{ name: " ", url: "/" },
 	{ name: "Login", url: "/login" },
 	{ name: "Register", url: "/register" },
+	{ name: "dialog", url: "/dialog" }
 ]
 
 //TODO: Split other components into individual components
@@ -69,14 +72,14 @@ const FooterComponent = () => {
 
 	return (
 		<Footer>
-			<Footer.Copyright href="/" by="Narrify" year={ 2024 }/>
+			<Footer.Copyright href="/" by="Narrify" year={2024} />
 
 			<Footer.LinkGroup>
-				{ links.map(({ icon: Icon, name, url }) => (
-					<Footer.Link key={ name } href={ url }>
-						<Icon className="h-6 w-6"/>
+				{links.map(({ icon: Icon, name, url }) => (
+					<Footer.Link key={name} href={url}>
+						<Icon className="h-6 w-6" />
 					</Footer.Link>
-				)) }
+				))}
 			</Footer.LinkGroup>
 		</Footer>
 	)
@@ -84,31 +87,33 @@ const FooterComponent = () => {
 
 const Layout = ({ children }) => {
 	return (
-		<Flowbite theme={ { theme: customTheme } }>
+		<Flowbite theme={{ theme: customTheme }}>
 			<div className="flex flex-col min-h-screen bg-[#EEEEEE] text-[#222831] font-poppins">
 				<header className="flex">
 					<Navbar fluid>
-						<Navbar.Brand href="/">
+						<Navbar.Brand as={Link} to="/">
 							<span className="self-center whitespace-nowrap text-xl font-semibold text-[#00ADB5]">
 								Narrify
 							</span>
 						</Navbar.Brand>
 
-						<Navbar.Toggle/>
+						<Navbar.Toggle />
 
 						<Navbar.Collapse>
-							{ pages.map(({ name, url }) => (
-								<Navbar.Link key={ name } href={ url }>{ name }</Navbar.Link>
-							)) }
+							{pages.map(({ name, url }) => (
+								<Link key={name} to={url} className="block py-2 pl-3 pr-4 md:p-0 text-lg text-[#EEEEEE] hover:text-[#00ADB5]">
+									{name}
+								</Link>
+							))}
 						</Navbar.Collapse>
 					</Navbar>
 				</header>
 
 				<main className="flex-grow">
-					{ children }
+					{children}
 				</main>
 
-				<FooterComponent/>
+				<FooterComponent />
 			</div>
 		</Flowbite>
 	)
@@ -118,4 +123,4 @@ Layout.propTypes = {
 	children: PropTypes.node,
 }
 
-export default Layout
+export default Layout;
