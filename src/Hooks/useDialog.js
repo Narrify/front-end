@@ -1,35 +1,37 @@
-import { useEffect, useState } from 'react';
+// useDialog.js
+import { useState } from 'react';
 import axios from 'axios';
 import { navigate } from "gatsby";
 
+const useDialog = () => {
+    const [response, setResponse] = useState(null);
 
-const useDialog = (Token, Json) => {
-    const [response, setResponse] = useState(null); // Corrección en el nombre de la variable
+    const fetchDialog = async (json) => {
+        try {
+            console.log("await post");
+            console.log("json", json);
 
-    useEffect(() => {
-        const fetchDialog = async () => {
-            try {
-                const response = await axios.post(
-                    `http://127.0.0.1:8000/generate/dialog`, 
-                    Json, // Enviar el JSON en el cuerpo de la solicitud
-                    {
-                        headers: {
-                            'Authorization': `Bearer ${Token}` // Enviar el token en el header
-                        }
-                    }
-                );
-                setResponse(response.data.body); // Corrección en el nombre de la variable
-            } catch (error) {
-                setResponse(null); // Corrección en el nombre de la variable
-                console.log("fallo 404  aqui")
-                navigate('/404'); // Redirige a la página 404 en caso de error
-            }
-        };
+            const result = await axios.post(
+                "http://127.0.0.1:8000/generate/dialog",
+                json // Enviar el JSON como objeto
+            );
 
-        fetchDialog(); // Llamada a la función fetchDialog
-    }, [Token, Json]); // Escucha cambios en Token y Json
+            console.log("end post");
+            console.log("result data:", result.data);
 
-    return { response };
+            // Accede a result.data.response según la estructura de la respuesta
+            setResponse(result.data.response);
+            console.log("result data:", result.data.response);
+
+
+        } catch (error) {
+            setResponse(null);
+            console.log("Error en la solicitud:", error);
+            navigate('/404');
+        }
+    };
+
+    return { response, fetchDialog };
 };
 
 export default useDialog;
