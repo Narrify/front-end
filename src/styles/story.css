@@ -1,4 +1,3 @@
-
 .story-page {
     padding: 2rem;
     max-width: 800px;
@@ -43,6 +42,7 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 1rem;
 }
 
 .submit-button:hover, .download-button:hover {
@@ -55,5 +55,34 @@
     padding: 1rem;
     border-radius: 4px;
     overflow-x: auto;
-    max-height: 300px;
+    max-height: 400px;
+    margin-top: 1rem;
+    white-space: pre-wrap;
+}
+
+.history-section {
+    background-color: #393E46;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    color: #EEEEEE;
+}
+
+.history-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #2A2A2A;
+    border-radius: 4px;
+}
+
+.history-details {
+    margin-top: 0.5rem;
+}
+
+.history-details pre {
+    background-color: #222831;
+    padding: 1rem;
+    border-radius: 4px;
+    color: #EEEEEE;
+    overflow-x: auto;
 }
