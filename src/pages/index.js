@@ -1,12 +1,14 @@
 import React from "react"
 
 import Layout from "../components/Layout"
+import Dialog from "../pages/dialog"
+/* 
+comentario
 
+*/
 const Index = () => {
 	return (
-		<Layout>
-			INDEX
-		</Layout>
+			<Dialog/>
 	)
 }
 
