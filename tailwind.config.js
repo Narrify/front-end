@@ -1,4 +1,4 @@
-import flowbite from "flowbite-react/tailwind"
+import flowbite from "flowbite-react/tailwind";
 
 module.exports = {
 	content: [
@@ -12,5 +12,5 @@ module.exports = {
 	plugins: [
 		flowbite.plugin()
 	]
-}
+};
 

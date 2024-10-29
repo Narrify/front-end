@@ -49,41 +49,39 @@ const customTheme = {
 			size: "h-5 w-5"
 		}
 	}
-}
+};
 
 const pages = [
-	{ name: "Home", url: "/" },
-	{ name: "Story", url: "/story" },
-	{ name: "Dialog", url: "/dialog" }
-]
-
-//TODO: Split other components into individual components
+	{name: "Home", url: "/"},
+	{name: "Story", url: "/story"},
+	{name: "Dialog", url: "/dialog"}
+];
 
 const FooterComponent = () => {
 	const links = [
-		{ icon: BsDiscord, name: "Discord", url: "https://discord.com/", },
-		{ icon: BsGithub, name: "GitHub", url: "https://github.com/", },
-		{ icon: BsTwitterX, name: "X", url: "https://x.com/", }
-	]
+		{icon: BsDiscord, name: "Discord", url: "https://discord.com/",},
+		{icon: BsGithub, name: "GitHub", url: "https://github.com/",},
+		{icon: BsTwitterX, name: "X", url: "https://x.com/",}
+	];
 
 	return (
 		<Footer>
-			<Footer.Copyright href="/" by="Narrify" year={2024} />
+			<Footer.Copyright href="/" by="Narrify" year={2024}/>
 
 			<Footer.LinkGroup>
-				{links.map(({ icon: Icon, name, url }) => (
+				{links.map(({icon: Icon, name, url}) => (
 					<Footer.Link key={name} href={url}>
-						<Icon className="h-6 w-6" />
+						<Icon className="h-6 w-6"/>
 					</Footer.Link>
 				))}
 			</Footer.LinkGroup>
 		</Footer>
-	)
-}
+	);
+};
 
-const Layout = ({ children }) => {
+const Layout = ({children}) => {
 	return (
-		<Flowbite theme={{ theme: customTheme }}>
+		<Flowbite theme={{theme: customTheme}}>
 			<div className="flex flex-col min-h-screen bg-[#EEEEEE] text-[#222831] font-poppins">
 				<header className="flex">
 					<Navbar fluid>
@@ -93,10 +91,10 @@ const Layout = ({ children }) => {
 							</span>
 						</Navbar.Brand>
 
-						<Navbar.Toggle />
+						<Navbar.Toggle/>
 
 						<Navbar.Collapse>
-							{pages.map(({ name, url }) => (
+							{pages.map(({name, url}) => (
 								<Link key={name} to={url} className="block py-2 pl-3 pr-4 md:p-0 text-lg text-[#EEEEEE] hover:text-[#00ADB5]">
 									{name}
 								</Link>
@@ -109,14 +107,14 @@ const Layout = ({ children }) => {
 					{children}
 				</main>
 
-				<FooterComponent />
+				<FooterComponent/>
 			</div>
 		</Flowbite>
-	)
-}
+	);
+};
 
 Layout.propTypes = {
 	children: PropTypes.node,
-}
+};
 
 export default Layout;
