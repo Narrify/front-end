@@ -53,12 +53,8 @@ const customTheme = {
 
 const pages = [
 	{ name: "Home", url: "/" },
-	{ name: "Panel", url: "/panel" },
-	{ name: "Profile", url: "/profile" },
-	{ name: " ", url: "/" },
-	{ name: "Login", url: "/login" },
-	{ name: "Register", url: "/register" },
-	{ name: "dialog", url: "/dialog" }
+	{ name: "Story", url: "/story" },
+	{ name: "Dialog", url: "/dialog" }
 ]
 
 //TODO: Split other components into individual components
