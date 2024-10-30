@@ -53,6 +53,7 @@ const customTheme = {
 
 const pages = [
 	{name: "Home", url: "/"},
+	{name: "Prompt History", url: "/history"},
 	{name: "Story", url: "/story"},
 	{name: "Dialog", url: "/dialog"}
 ];

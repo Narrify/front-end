@@ -1,4 +1,3 @@
-/* Contenedor principal dividido en dos columnas */
 .dialog-page {
     display: flex;
     flex-direction: row;
@@ -9,15 +8,13 @@
     box-sizing: border-box;
 }
 
-/* Sección del formulario */
 .form-section, .response-section {
     flex: 1;
-    padding: 1.5rem;
+    margin: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo de la sección del formulario */
 .form-section {
     background-color: #f5f5f5;
     display: flex;
@@ -25,14 +22,12 @@
     gap: 1.5rem;
 }
 
-/* Estilo de la sección de respuesta */
 .response-section {
     background-color: #e0e0e0;
     display: flex;
     flex-direction: column;
 }
 
-/* Estilos de los grupos de entradas */
 .input-group {
     display: flex;
     flex-direction: column;
@@ -40,7 +35,7 @@
 
 .input-group label {
     margin-bottom: 0.5rem;
-    color: #333;
+    color: #fff;
     font-weight: 500;
     font-size: 1rem;
 }
@@ -54,19 +49,16 @@
     box-sizing: border-box;
 }
 
-/* Limitar altura del textarea */
 .textarea-field {
     height: 200px;
     resize: none;
 }
 
-/* Grupo de botones */
 .button-group {
     display: flex;
     justify-content: flex-end;
 }
 
-/* Botón de enviar */
 .submit-button {
     background-color: #00bfa6;
     color: white;
@@ -83,15 +75,32 @@
     background-color: #009f8a;
 }
 
-/* Estilo de la sección de visualización del JSON */
 .json-display {
-    padding: 1rem;
-    background-color: #ffffff;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 0 8px rgba(0, 0, 0, 0.05);
+    overflow: auto; 
+    max-height: 400px; 
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9rem; 
+    color: #333333;
+    line-height: 1.5; 
+}
+
+.json-display::-webkit-scrollbar {
+    width: 8px;
+}
+
+.json-display::-webkit-scrollbar-track {
+    background: #e0e0e0;
     border-radius: 4px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-    overflow: auto; /* Habilitar scroll en ambas direcciones */
-    max-height: 300px; /* Altura fija para mantener la estructura */
-    max-width: 500px; /* Anchura fija */
-    white-space: pre-wrap; /* Permite ajustar el texto automáticamente */
-    word-wrap: break-word; /* Evita el desbordamiento horizontal */
+}
+
+.json-display::-webkit-scrollbar-thumb {
+    background: #b0b0b0;
+    border-radius: 4px;
 }

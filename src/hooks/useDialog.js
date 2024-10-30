@@ -5,32 +5,34 @@ import { navigate } from "gatsby";
 const useDialog = () => {
 	const [response, setResponse] = useState(null);
 
-	const fetchDialog = async (json) => {
+	const fetchDialog = async (json, token) => {
 		try {
-			console.log("await post");
+			console.log("awaiting post");
 			console.log("json", json);
 
 			const result = await axios.post(
-				"http://127.0.0.1:8000/generate/dialog",
-				json // Enviar el JSON como objeto
+				"http://127.0.0.1:8001/generate/dialog",
+				json,
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
 			);
 
-			console.log("end post");
+			console.log("post completed");
 			console.log("result data:", result.data);
 
-			// Accede a result.data.response según la estructura de la respuesta
-			setResponse(result.data.response);
-			console.log("result data:", result.data.response);
-
+			setResponse(result.data);
 
 		} catch (error) {
 			setResponse(null);
-			console.log("Error en la solicitud:", error);
+			console.log("Request error:", error);
 			navigate("/404");
 		}
 	};
 
-	return {response, fetchDialog};
+	return { response, fetchDialog };
 };
 
 export default useDialog;
