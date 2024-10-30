@@ -6,20 +6,20 @@ import useDialog from "../hooks/useDialog";
 const Dialog = () => {
 	const [token, setToken] = useState("");
 	const [jsonBody, setJsonBody] = useState("");
-	const {response, fetchDialog} = useDialog();
+	const { response, fetchDialog } = useDialog();
 
 	const handleSend = () => {
 		if (token && jsonBody) {
 			try {
 				const parsedJsonBody = JSON.parse(jsonBody);
-				fetchDialog(parsedJsonBody)
-					.catch(error => console.error("Error al hacer la solicitud de diálogo:", error));
+				fetchDialog(parsedJsonBody, token)
+					.catch(error => console.error("Error making dialog request:", error));
 			} catch (error) {
-				console.error("JSON inválido. Asegúrate de que el JSON esté bien formateado:", error);
-				alert("JSON inválido. Asegúrate de que el JSON esté bien formateado.");
+				console.error("Invalid JSON. Make sure the JSON is properly formatted:", error);
+				alert("Invalid JSON. Make sure the JSON is properly formatted.");
 			}
 		} else {
-			alert("Por favor, ingrese el token y el JSON Body.");
+			alert("Please enter the token and JSON Body.");
 		}
 	};
 
@@ -32,7 +32,7 @@ const Dialog = () => {
 						<input
 							type="text"
 							id="token"
-							placeholder="Ingresa el token"
+							placeholder="Enter the token"
 							className="input-field"
 							value={token}
 							onChange={(e) => setToken(e.target.value)}
@@ -44,7 +44,7 @@ const Dialog = () => {
 						<textarea
 							id="json"
 							rows="10"
-							placeholder="JSON"
+							placeholder="Enter JSON"
 							className="textarea-field"
 							value={jsonBody}
 							onChange={(e) => setJsonBody(e.target.value)}
@@ -53,19 +53,18 @@ const Dialog = () => {
 
 					<div className="button-group">
 						<button type="button" className="submit-button" onClick={handleSend}>
-							Enviar
+							Send
 						</button>
 					</div>
 				</div>
 
 				<div className="form-section">
-					<h2>Respuesta JSON</h2>
+					<h2 style={{color : "white"}}>JSON Response</h2>
 					<div className="json-display">
-						{/* Renderización de la respuesta JSON */}
 						{response ? (
 							<pre>{JSON.stringify(response, null, 2)}</pre>
 						) : (
-							<p>Aquí se mostrará el JSON de respuesta.</p>
+							<p>The JSON response will be displayed here.</p>
 						)}
 					</div>
 				</div>

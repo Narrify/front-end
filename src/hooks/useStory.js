@@ -5,7 +5,7 @@ const useStory = () => {
 	const [response, setResponse] = useState(null);
 
 	const fetchStory = async (parsedJsonBody, token) => {
-		console.log("Sending JSON:", parsedJsonBody); // Log to verify structure
+		console.log("Sending JSON:", parsedJsonBody);
 
 		try {
 			const result = await axios.post(
@@ -25,7 +25,6 @@ const useStory = () => {
 			setResponse(null);
 			console.error("Error fetching story:", error);
 
-			// If there's a response error, log the response
 			if (error.response) {
 				console.error("Response data:", error.response.data);
 				console.error("Response status:", error.response.status);
