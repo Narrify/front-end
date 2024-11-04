@@ -1,4 +1,5 @@
 import flowbite from "flowbite-react/tailwind";
+import { BiFontFamily } from "react-icons/bi";
 
 module.exports = {
 	content: [
@@ -7,7 +8,12 @@ module.exports = {
 		flowbite.content(),
 	],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				primary: '#f6e5fa',
+				secondary: '#f4c3e8',
+			},
+		},
 	},
 	plugins: [
 		flowbite.plugin()

@@ -1,9 +1,7 @@
-// History.js
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import useHistory from "../hooks/useHistory";
 import PromptList from "../components/PromptList";
-import Modal from "../components/Modal";
 
 const History = () => {
 	const [token, setToken] = useState("");
@@ -18,7 +16,6 @@ const History = () => {
 		}
 	};
 
-	// Close the modal
 	const closeModal = () => {
 		setSelectedPrompt(null);
 	};
@@ -26,7 +23,7 @@ const History = () => {
 	return (
 		<Layout>
 			<div className="max-w-2xl mx-auto p-6 my-20">
-				<h1 className="text-2xl font-bold mb-6">Prompt History</h1>
+				<h1 className="text-2xl font-bold mb-6">History</h1>
 
 				<div className="flex flex-col space-y-4 mb-8">
 					<input

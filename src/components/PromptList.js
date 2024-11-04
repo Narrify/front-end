@@ -1,4 +1,3 @@
-// PromptList.js
 import React, { useState } from "react";
 import Modal from "./Modal";
 
@@ -15,7 +14,7 @@ const PromptList = ({ prompts }) => {
 
 	return (
 		<div className="prompt-list">
-			<h2 className="text-xl font-semibold mb-4">Prompt History</h2>
+			<h2 className="text-xl font-semibold mb-4">History</h2>
 			<ul className="space-y-2">
 				{prompts.map((prompt, index) => (
 					<li
