@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import "../styles/Dialog.css";
 import useDialog from "../Hooks/useDialog";
-import Header from "./d_Barra";
-const Dialog = () => {
+import FormDialog from "../components/FormDialog";
+const dialog = () => {
     const [token, setToken] = useState("");
     const [jsonBody, setJsonBody] = useState("");
     const { response, fetchDialog } = useDialog();
@@ -26,10 +26,10 @@ const Dialog = () => {
     return (
         <Layout>
             
-           <Header/>
+           <FormDialog/>
           
         </Layout>
     );
 };
 
-export default Dialog;
+export default dialog;
