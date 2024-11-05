@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 
-import { Flowbite, Footer, Navbar, DarkThemeToggle } from "flowbite-react";
+import { Flowbite, Footer, Navbar, DarkThemeToggle, Dropdown } from "flowbite-react";
 import { BsDiscord, BsGithub, BsTwitterX } from "react-icons/bs";
 
 const customTheme = {
@@ -55,7 +55,7 @@ const pages = [
 	{name: "Home", url: "/"},
 	{name: "History", url: "/history"},
 	{name: "Story", url: "/story"},
-	{name: "Dialog", url: "/dialog"}
+	{name: "Dialog", url: "/dialog"},
 ];
 
 const FooterComponent = () => {
@@ -81,6 +81,19 @@ const FooterComponent = () => {
 };
 
 const Layout = ({children}) => {
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+	useEffect(() => {
+		const token = localStorage.getItem("AuthToken");
+		setIsAuthenticated(!!token);
+	}, []);
+
+	const handleLogout = () => {
+		localStorage.removeItem("AuthToken");
+		setIsAuthenticated(false);
+		navigate("/");
+	}
+
 	return (
 		<Flowbite theme={{theme: customTheme}}>
 			<div className="flex flex-col min-h-screen bg-primary text-[#222831] font-poppins relative">
@@ -95,12 +108,24 @@ const Layout = ({children}) => {
 						<Navbar.Toggle/>
 
 						<Navbar.Collapse>
-							{pages.map(({name, url}) => (
+							{pages.map(({ name, url }) => (
 								<Link key={name} to={url} className="block py-2 pl-3 pr-4 md:p-0 text-lg text-[#EEEEEE] hover:text-[#C896CB]">
 									{name}
 								</Link>
 							))}
+
+							{isAuthenticated ? (
+								<Dropdown label="Profile" inline placement="bottom-end">
+									<Dropdown.Item onClick={handleLogout}>Logout Account</Dropdown.Item>
+								</Dropdown>
+							) : (
+								<Link to="/login" className="block py-2 pl-3 pr-4 md:p-0 text-lg text-[#EEEEEE] hover:text-[#C896CB]">
+									Login
+								</Link>
+							)}
+
 						</Navbar.Collapse>
+						
 					</Navbar>
 				</header>
 

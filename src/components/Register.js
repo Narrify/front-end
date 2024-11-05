@@ -203,7 +203,7 @@ export default function RegisterComponent(props) {
 						<Typography sx={{textAlign: 'center'}}>
 							Already have an account?{' '}
 							<Link
-								href="/register"
+								href="/login"
 								variant="body2"
 								sx={{alignSelf: 'center'}}
 							>

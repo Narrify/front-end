@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import "../styles/Dialog.css";
 import useDialog from "../hooks/useDialog";
+import withAuth from "../components/withAuth";
+
 
 const Dialog = () => {
 	const [token, setToken] = useState("");
@@ -73,4 +75,4 @@ const Dialog = () => {
 	);
 };
 
-export default Dialog;
+export default withAuth(Dialog);
