@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const useHistory = () => {
-	const [prompts, setPrompts] = useState([]);
+	const [responses, setResponses] = useState([]);
 	const [error, setError] = useState(null);
 
 	const fetchHistory = async (token) => {
@@ -12,16 +12,16 @@ const useHistory = () => {
 					Authorization: `Bearer ${token}`,
 				},
 			});
-			setPrompts(response.data);
+			setResponses(response.data);
 			setError(null);
 		} catch (err) {
-			setError("Failed to fetch prompt history.");
-			setPrompts([]);
+			setError("Failed to fetch response history.");
+			setResponses([]);
 			console.error("Error fetching history:", err);
 		}
 	};
 
-	return { prompts, fetchHistory, error };
+	return { responses, fetchHistory, error };
 };
 
 export default useHistory;

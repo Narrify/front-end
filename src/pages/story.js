@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import "../styles/story.css";
 import useStory from "../hooks/useStory";
+import withAuth from "../components/withAuth";
 
 const Story = () => {
 	const [token, setToken] = useState("");
@@ -124,4 +125,4 @@ const Story = () => {
 	);
 };
 
-export default Story;
+export default withAuth(Story);
