@@ -7,10 +7,10 @@ import 'animate.css';
 export default function Component () {
   return (
     <div className="character-atributes">
-      <div className="mb-3 box-character animate__animated animate__fadeInLeft">
+      <div className="mb-3 box-character ">
         <GoPerson size={40} />
       </div>
-      <div className="mb-3 box-character animate__animated animate__fadeInUp">
+      <div className="mb-3 box-character ">
         <label htmlFor="exampleInputEmail1" className="form-label">
           Name
         </label>
@@ -22,8 +22,8 @@ export default function Component () {
           placeholder="Pablo Escobar"
         />
       </div>
-      <div className="mb-3 box-character animate__animated animate__fadeInUp">
-        <label htmlFor="exampleInputEmail1" className="form-label">
+      <div className="mb-3 box-character">
+        <label className="form-label">
           Personality
         </label>
         <input
@@ -34,7 +34,7 @@ export default function Component () {
           placeholder="friendly, funny"
         />
       </div>
-      <div className="mb-3 box-character back-btn animate__animated animate__fadeInRight">
+      <div className="mb-3 box-character back-btn ">
         <MdAddCircleOutline size={40} />
       </div>
     </div>

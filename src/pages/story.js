@@ -10,7 +10,6 @@ const Story = () => {
 	const [history, setHistory] = useState([]);
 
 	useEffect(() => {
-		// Load history from local storage when the component mounts
 		const savedHistory = JSON.parse(localStorage.getItem("storyHistory")) || [];
 		setHistory(savedHistory);
 	}, []);
@@ -24,7 +23,6 @@ const Story = () => {
 				fetchStory(parsedJsonBody, token)
 					.then(() => {
 						if (response) {
-							// Save the request and response to history
 							const newHistoryItem = {request: parsedJsonBody, response};
 							const updatedHistory = [newHistoryItem, ...history];
 							setHistory(updatedHistory);
@@ -41,7 +39,6 @@ const Story = () => {
 		}
 	};
 
-	// Function to download the JSON response as a file
 	const downloadJson = () => {
 		if (!response) return;
 

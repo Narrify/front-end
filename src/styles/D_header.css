@@ -1,6 +1,7 @@
 .header-container {
     background-color: #e0e0e0;
     padding: 0.5rem;
+    margin-top: 500px;
 }
 
 .back-btn {
@@ -120,3 +121,14 @@
     align-items: center;
 
 }
+
+.collapse-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .show {
+    max-height: 500px; /* Ajusta el tamaño máximo necesario */
+  }
+  
