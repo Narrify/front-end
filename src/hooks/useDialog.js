@@ -7,9 +7,6 @@ const useDialog = () => {
 
 	const fetchDialog = async (json, token) => {
 		try {
-			console.log("awaiting post");
-			console.log("json", json);
-
 			const result = await axios.post(
 				"http://127.0.0.1:8001/generate/dialog",
 				json,
@@ -20,14 +17,11 @@ const useDialog = () => {
 				}
 			);
 
-			console.log("post completed");
-			console.log("result data:", result.data);
-
 			setResponse(result.data);
 
 		} catch (error) {
 			setResponse(null);
-			console.log("Request error:", error);
+			console.error("Error fetching dialog:", error);
 			navigate("/404");
 		}
 	};
