@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:16 AS build
 
 WORKDIR /app
 
@@ -10,6 +10,15 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE 3000
+#SEGUNDA ETAPA
+FROM nginx:alpine
 
-CMD ["npm", "run", "start"]
+COPY --from=build /app/public /usr/share/nginx/html
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 80
+
+
+CMD ["nginx", "-g", "daemon off;"]
+
