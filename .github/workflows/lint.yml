@@ -26,6 +26,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./front-end
 
       - name: Run lint
         run: npm run lint
+        working-directory: ./front-end
