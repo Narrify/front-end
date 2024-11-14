@@ -11,7 +11,7 @@ const useDialog = () => {
 			console.log("json", json);
 
 			const result = await axios.post(
-				"http://127.0.0.1:8001/generate/dialog",
+				"http://narrify.dev/generate/dialog",
 				json,
 				{
 					headers: {
