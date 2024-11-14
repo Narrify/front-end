@@ -22,12 +22,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./front-end
 
       - name: Run lint
         run: npm run lint
-        working-directory: ./front-end
