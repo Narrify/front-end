@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Link, navigate } from "gatsby";
 
-import { Flowbite, Footer, Navbar, DarkThemeToggle, Dropdown } from "flowbite-react";
+import { Flowbite, Footer, Navbar, Dropdown } from "flowbite-react";
 import { BsDiscord, BsGithub, BsTwitterX } from "react-icons/bs";
 
 const customTheme = {
