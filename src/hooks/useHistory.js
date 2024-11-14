@@ -7,7 +7,7 @@ const useHistory = () => {
 
 	const fetchHistory = async (token) => {
 		try {
-			const response = await axios.get("http://127.0.0.1:8001/prompts/get", {
+			const response = await axios.get("http://narrify.dev/prompts/get", {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},

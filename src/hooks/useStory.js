@@ -8,7 +8,7 @@ const useStory = () => {
 	const fetchStory = async (json, token) => {
 		try {
 			const result = await axios.post(
-				"http://127.0.0.1:8001/generate/story",
+				"http://narrify.dev/generate/story",
 				json,
 				{
 					headers: {
