@@ -8,7 +8,7 @@ const useDialog = () => {
 	const fetchDialog = async (json, token) => {
 		try {
 			const result = await axios.post(
-				"http://narrify.dev/generate/dialog",
+				"http://localhost:8001/generate/dialog",
 				json,
 				{
 					headers: {

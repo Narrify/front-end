@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function useLogin() {
-  const apiEndpoint = 'http://narrify.dev/auth/token';
+  const apiEndpoint = 'http://localhost:8000/auth/token';
   const [usernameError, setUsernameError] = useState(false);
   const [usernameErrorMessage, setUsernameErrorMessage] = useState('');
   const [passwordError, setPasswordError] = useState(false);

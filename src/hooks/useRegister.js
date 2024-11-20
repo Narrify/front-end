@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function useRegister() {
-  const apiEndpoint = 'http://127.0.0.1:8000/users';
+  const apiEndpoint = 'http://localhost:8000/users';
   const [usernameError, setUsernameError] = useState(false);
   const [usernameErrorMessage, setUsernameErrorMessage] = useState('');
   const [emailError, setEmailError] = useState(false);
