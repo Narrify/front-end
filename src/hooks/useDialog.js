@@ -8,7 +8,7 @@ const useDialog = () => {
 	const fetchDialog = async (json, token) => {
 		try {
 			const result = await axios.post(
-				"http://localhost:8001/generate/dialog",
+				"http://k8s-default-ingressn-3e4c502731-1968576031.us-east-1.elb.amazonaws.com/generate/dialog",
 				json,
 				{
 					headers: {
