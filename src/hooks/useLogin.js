@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function useLogin() {
-  const apiEndpoint = 'http://k8s-default-ingressn-3e4c502731-1968576031.us-east-1.elb.amazonaws.com/auth/token';
+  const apiEndpoint = 'http://k8s-default-ingressn-3e4c502731-1860817238.us-east-1.elb.amazonaws.com/auth/token';
   const [usernameError, setUsernameError] = useState(false);
   const [usernameErrorMessage, setUsernameErrorMessage] = useState('');
   const [passwordError, setPasswordError] = useState(false);

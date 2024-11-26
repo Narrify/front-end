@@ -8,7 +8,7 @@ export const useFetchHistoryData = (token) => {
   useEffect(() => {
     const fetchStories = async () => {
       try {
-        const response = await fetch("http://k8s-default-ingressn-3e4c502731-1968576031.us-east-1.elb.amazonaws.com/stories", {
+        const response = await fetch("http://k8s-default-ingressn-3e4c502731-1860817238.us-east-1.elb.amazonaws.com/stories", {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
