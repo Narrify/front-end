@@ -9,10 +9,7 @@ const StorySection = ({ title, content }) => (
 )
 
 const StoryHistoryVisualizer = ({ stories }) => {
-  if (!stories || stories.length === 0) {
-    return <div>No stories available.</div>
-  }
-
+  
   return (
     <div className="w-full">
       <Accordion>

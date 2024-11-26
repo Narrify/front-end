@@ -68,7 +68,7 @@ function useRegister() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to register');
+        throw new Error('Account already exists with that email or username');
       }
 
       setSuccess(true);

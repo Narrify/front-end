@@ -59,7 +59,7 @@ function useLogin() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to login');
+        throw new Error('Incorrect Username or Password');
       }
 
       const result = await response.json();
