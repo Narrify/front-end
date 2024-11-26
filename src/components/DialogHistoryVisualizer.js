@@ -9,9 +9,6 @@ const DialogLine = ({ character, line }) => (
 )
 
 const DialogHistoryVisualizer = ({ dialogs }) => {
-  if (!dialogs || dialogs.length === 0) {
-    return <div>No dialog data available.</div>
-  }
 
   return (
     <div className="w-full">

@@ -98,7 +98,6 @@ export default function StoryInput() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
 
     const token = localStorage.getItem("AuthToken");
 
@@ -154,7 +153,7 @@ export default function StoryInput() {
                   name="name"
                   value={attr.name}
                   onChange={(e) => handleInputChange(e, 'settings', null, attrIndex)}
-                  placeholder="Name"
+                  placeholder="E.g: genre, type, etc."
                   required
                 />
                 <div className="flex items-center gap-2">
@@ -162,7 +161,7 @@ export default function StoryInput() {
                     name="value"
                     value={attr.value}
                     onChange={(e) => handleInputChange(e, 'settings', null, attrIndex)}
-                    placeholder="Value"
+                    placeholder="E.g: mystery, detective story, etc."
                     required
                   />
                   <Button
@@ -206,7 +205,7 @@ export default function StoryInput() {
                     name="name"
                     value={attr.name}
                     onChange={(e) => handleInputChange(e, 'characters', index, attrIndex)}
-                    placeholder="Name"
+                    placeholder="E.g: trait, personality, etc."
                     required
                   />
                   <div className="flex items-center gap-2">
@@ -214,7 +213,7 @@ export default function StoryInput() {
                       name="value"
                       value={attr.value}
                       onChange={(e) => handleInputChange(e, 'characters', index, attrIndex)}
-                      placeholder="Value"
+                      placeholder="E.g: charismatic, extroverted, etc."
                       required
                     />
                     <Button

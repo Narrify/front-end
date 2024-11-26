@@ -66,7 +66,7 @@ function useLogin() {
       localStorage.setItem('AuthToken', result.access_token);
       setSuccess(true);
     } catch (err) { 
-      setError(err.message);
+      setError("Incorrect Username or Password");
     } finally {
       setLoading(false);
     }

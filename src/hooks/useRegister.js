@@ -73,7 +73,7 @@ function useRegister() {
 
       setSuccess(true);
     } catch (err) {
-      setError(err.message);
+      setError("Account already exists with that email or username");
     } finally {
       setLoading(false);
     }

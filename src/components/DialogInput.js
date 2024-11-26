@@ -113,7 +113,7 @@ export default function DialogInput() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="number_of_scenes" value="Number of Scenes" />
+              <Label htmlFor="number_of_scenes" value="Number of Scenes (total interactions)" />
               <TextInput
                 id="number_of_scenes"
                 name="number_of_scenes"
@@ -168,6 +168,7 @@ export default function DialogInput() {
                     name="name"
                     value={attr.name}
                     onChange={(e) => handleInputChange(e, index, attrIndex)}
+                    placeholder="E.g: trait, personality, etc."
                     required
                   />
                 </div>
@@ -178,6 +179,7 @@ export default function DialogInput() {
                     name="value"
                     value={attr.value}
                     onChange={(e) => handleInputChange(e, index, attrIndex)}
+                    placeholder="E.g: charismatic, extroverted, etc."
                     required
                   />
                 </div>
