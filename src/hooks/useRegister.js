@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function useRegister() {
-  const apiEndpoint = 'https://narrify.dev/users';
+  const apiEndpoint = 'https://narrify.dev/users/';
   const [usernameError, setUsernameError] = useState(false);
   const [usernameErrorMessage, setUsernameErrorMessage] = useState('');
   const [emailError, setEmailError] = useState(false);
