@@ -65,7 +65,7 @@ function useLogin() {
       const result = await response.json();
       localStorage.setItem('AuthToken', result.access_token);
       setSuccess(true);
-    } catch (err) {
+    } catch (err) { 
       setError(err.message);
     } finally {
       setLoading(false);

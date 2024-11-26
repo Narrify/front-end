@@ -27,7 +27,7 @@ export const useFetchHistoryData = (token) => {
   useEffect(() => {
     const fetchDialogs = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8001/dialogs", {
+        const response = await fetch("https://narrify.dev/dialogs", {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
